@@ -1,4 +1,12 @@
  document.addEventListener('DOMContentLoaded', function() {
+  // Initialize all checkboxes as unchecked on page load
+  function initializeCheckboxes() {
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+      checkbox.checked = false;
+    });
+    updateFilterCount();
+  }
+
   // Toggle filter panel
   const filterToggle = document.getElementById('filterToggle');
   const filterPanel = document.getElementById('filterPanel');
@@ -27,8 +35,8 @@
     checkbox.addEventListener('change', updateFilterCount);
   });
 
-  // Initialize filter count
-  updateFilterCount();
+  // Initialize on page load
+  initializeCheckboxes();
 
   // Rocket launch animation
   const searchButton = document.getElementById('searchButton');
