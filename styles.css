@@ -1,4 +1,4 @@
- :root {
+:root {
   --blue-yonder: #2E96F5;
   --neon-blue: #0960E1;
   --electric-blue: #0042A6;
@@ -28,6 +28,48 @@
   --card-bg: rgba(255, 255, 255, 0.95);
   --card-border: rgba(46, 150, 245, 0.2);
   --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  /* Enhanced yellow for better visibility */
+  --neon-yellow: #d4b100;
+}
+
+/* Improve yellow text visibility in light mode */
+.light-mode .title-accent {
+  color: var(--neon-yellow);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: inline-block;
+}
+
+.light-mode .title-accent::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--neon-yellow);
+  border-radius: 1px;
+}
+
+.light-mode .panel-value {
+  color: var(--neon-yellow);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.light-mode .team-name {
+  color: var(--neon-yellow);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Improve contrast for other yellow elements */
+.light-mode .tag {
+  color: #8a6d00;
+  background: rgba(212, 177, 0, 0.15);
+  border: 1px solid rgba(212, 177, 0, 0.3);
+}
+
+.light-mode .result-meta span {
+  color: #1e4c8c;
 }
 
 * {
@@ -236,7 +278,7 @@ body {
 
 /* Logo Header */
 .logo-header {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .logo-container {
@@ -248,26 +290,26 @@ body {
 }
 
 .logo-placeholder {
-  width: 80px;
-  height: 80px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
+  width: 130px;
+  height: 130px;
+ 
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid var(--card-border);
+ 
   color: var(--blue-yonder);
   font-size: 32px;
   flex-shrink: 0;
 }
 
-.logo-placeholder.nasa-logo {
-  background: rgba(255, 255, 255, 0.15);
+.logo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 13px;
 }
 
-.logo-placeholder.team-logo {
-  background: rgba(234, 254, 7, 0.1);
-}
+
 
 .logo-text {
   display: flex;
@@ -1253,6 +1295,13 @@ footer {
   color: var(--blue-yonder);
   font-size: 40px;
   flex-shrink: 0;
+}
+
+.team-logo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 18px;
 }
 
 .team-info {
